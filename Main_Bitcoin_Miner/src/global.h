@@ -8,9 +8,10 @@
 #ifndef GLOBAL_H_
 #define GLOBAL_H_
 #include <ctime>
+#include "BlockchainNode.h"
 
-extern time_t sTime;
-
+extern int n;
+extern BlockchainNode nodeList[];
 
 
 #endif /* GLOBAL_H_ */

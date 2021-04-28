@@ -8,5 +8,7 @@
 
 #include "global.h"
 
-time_t sTime = 0;
+int n = 5;
+BlockchainNode nodeList[5];
+
 
