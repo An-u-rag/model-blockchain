@@ -67,7 +67,8 @@ Now, we can test out some cases witht he above information.<br />
 Considering all default values already provided, we can make 3 cases mainly for testing security.<br />
 
 Case 1 : When three transactions to the nodes are sent and none of them are intercepted. The below should be the method calls from line 60 to 70 in "main.cpp".<br />
-    		// Transmitting correct transaction to node 1.
+    		
+		// Transmitting correct transaction to node 1.
     		nodeList[0].StartBlockchain();
 		nodeList[0].sendTransaction(test,sTime,closeNodeCount);
 
@@ -80,7 +81,8 @@ Case 1 : When three transactions to the nodes are sent and none of them are inte
 		nodeList[2].sendTransaction(test,sTime,closeNodeCount);
 
 Case 2 : When one of the three transactions is intercepted. Here node 2 is intercepted. The below should be the method calls from line 60 to 70 in "main.cpp".<br />
-    		// Transmitting correct transaction to node 1.
+    		
+		// Transmitting correct transaction to node 1.
     		nodeList[0].StartBlockchain();
 		nodeList[0].sendTransaction(test,sTime,closeNodeCount);
 
@@ -93,7 +95,8 @@ Case 2 : When one of the three transactions is intercepted. Here node 2 is inter
 		nodeList[2].sendTransaction(test,sTime,closeNodeCount);
     
 Case 3 : When one of the three transactions is intercepted. Here node 3 is intercepted. The below should be the method calls from line 60 to 70 in "main.cpp".<br />
-    		//T ransmitting correct transaction to node 1.
+    	
+		// Transmitting correct transaction to node 1.
     		nodeList[0].StartBlockchain();
 		nodeList[0].sendTransaction(test,sTime,closeNodeCount);
 
