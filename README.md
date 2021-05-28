@@ -63,7 +63,7 @@ Important Methods:<br />
     .bChain.DisplayBlockchain() - Prints out the Blockchain on that node.<br />
     
 
-Now, we can test out some cases witht he above information.<br />
+Now, we can test out some cases with the above information.<br />
 Considering all default values already provided, we can make 3 cases mainly for testing security.<br />
 
 Case 1 : When three transactions to the nodes are sent and none of them are intercepted. The below should be the method calls from line 60 to 70 in "main.cpp".<br />
