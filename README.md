@@ -1,17 +1,17 @@
 This code is an implementation of a proposed integration of Blockchain Network in an IOT system with focus on Securiy. 
 
 This was developed as a part of the research paper "Implementing Security in IOT Systems Via Blockchain" written by:
-Anurag Parcha
-Sanjana Mishra
-Aditya Bist
-Reema Agarwal
-Sagar Gupta
-Saahil Sharma
+1. Anurag Parcha
+2. Sanjana Mishra
+3. Aditya Bist
+4. Reema Agarwal
+5. Sagar Gupta
+6. Saahil Sharma
 
 Prerequisites :-
-Language : C++
-OS : Windows
-Preferred IDE : Eclipse for C++ / Visual Studio
+1. Language : C++
+2. OS : Windows
+3. Preferred IDE : Eclipse for C++ / Visual Studio
 
 To compile and execute this code:
 1. Clone the repository directly OR download the contents of this repo onto your PC. Make sure to remember the location of the downloaded folder.
@@ -34,30 +34,30 @@ All required changes only need to be made in "main.cpp" and not in any other fil
 Before we can modify, its best to understand the important terms from the code.
 
 Classes: 
-DHTSensor : This is a class which represents a weather monitoring system's DHT sensor which records temperature and humidity.
-BlockchainNode : This is a Class which represents a decentralised node on the blockchain network.
-Blockchain : This is a class which refers to a Blockchain running on each of the decentralised nodes i.e. BlockChainNode objects.
-Block : Refers to an individual Block on a blockchain which has transactions.
-Transaction: This is a class which refers to a transaction made between the DHT sensor object and the decentralised node's blockchain object.
+1. DHTSensor : This is a class which represents a weather monitoring system's DHT sensor which records temperature and humidity.
+2. BlockchainNode : This is a Class which represents a decentralised node on the blockchain network.
+3. Blockchain : This is a class which refers to a Blockchain running on each of the decentralised nodes i.e. BlockChainNode objects.
+4. Block : Refers to an individual Block on a blockchain which has transactions.
+5. Transaction: This is a class which refers to a transaction made between the DHT sensor object and the decentralised node's blockchain object.
 
 Variables:
-n - This is a global variable referring to the number of Decentralized nodes in the blockchain network, default is 5.(This value can be changes on the "global.cpp" file)
-nodeList[] - This is an object array which represents all the decentralised nodes on the blockchain network that is all the objects of BlockChainNode Class. Size depends on value of n.
-sensor - The actual and true object of DHTSensor object. 
-corrupt_sensor - An object of DHTSensor whose value has been adulterated or modified by an external source like a hacker.
-closeNodeCount - This integer value tells the amount of nodes the sensor is directly connected to and to whom it will relay its transmisions to.
-sTime - This is a timestamp variable which records the time before the initiation of a transaction.
-test - The pure transaction which the sensor wants to relay to the blockchain network.
-corrupt_test - adulterated transaction.
+1. n - This is a global variable referring to the number of Decentralized nodes in the blockchain network, default is 5.(This value can be changes on the "global.cpp" file)
+2. nodeList[] - This is an object array which represents all the decentralised nodes on the blockchain network that is all the objects of BlockChainNode Class. Size depends on value of n.
+3. sensor - The actual and true object of DHTSensor object. 
+4. corrupt_sensor - An object of DHTSensor whose value has been adulterated or modified by an external source like a hacker.
+5. closeNodeCount - This integer value tells the amount of nodes the sensor is directly connected to and to whom it will relay its transmisions to.
+6. sTime - This is a timestamp variable which records the time before the initiation of a transaction.
+7. test - The pure transaction which the sensor wants to relay to the blockchain network.
+8. corrupt_test - adulterated transaction.
 
 Important Methods:
-  DHTSensor Object - 
-    constuctor - takes in 2 values. (String ipaddress, flaot frequencyband)
+  1. DHTSensor Object - 
+     constuctor - takes in 2 values. (String ipaddress, flaot frequencyband)
     .Sense(float temperature, float humidity) - This method is used to sense th3e values of temperature and humidity passed in as a parameter. Takes two parameters. 
     .GetTemp() - Gets the temperature of the sensor's recorded value.
     .GetHumdity() - Gets the humidity of the sensor's recorded value.
   
-  BlockchainNode Object i.e nodeList[] - 
+  2. BlockchainNode Object i.e nodeList[] - 
     .StartBlockchain() - Initiates the Blockchain Object on that particular object of BlockchainNode.
     .sendTransaction(Transaction t, time_t sTime, int closeNodeCount) - recieves transaction "t" from the sensor at time "sTime" and tells that closeNodeCount-1 other nodes got it too.
     .bChain.DisplayBlockchain() - Prints out the Blockchain on that node.
