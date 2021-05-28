@@ -50,25 +50,25 @@ Variables:
 7. test - The pure transaction which the sensor wants to relay to the blockchain network.
 8. corrupt_test - adulterated transaction.
 
-Important Methods:
-  1. DHTSensor Object - 
-     constuctor - takes in 2 values. (String ipaddress, flaot frequencyband)
-    .Sense(float temperature, float humidity) - This method is used to sense th3e values of temperature and humidity passed in as a parameter. Takes two parameters. 
-    .GetTemp() - Gets the temperature of the sensor's recorded value.
-    .GetHumdity() - Gets the humidity of the sensor's recorded value.
+Important Methods:<br />
+  1. DHTSensor Object - <br />
+     constuctor - takes in 2 values. (String ipaddress, flaot frequencyband)<br />
+    .Sense(float temperature, float humidity) - This method is used to sense th3e values of temperature and humidity passed in as a parameter. Takes two parameters. <br />
+    .GetTemp() - Gets the temperature of the sensor's recorded value.<br />
+    .GetHumdity() - Gets the humidity of the sensor's recorded value.<br />
   
-  2. BlockchainNode Object i.e nodeList[] - 
-    .StartBlockchain() - Initiates the Blockchain Object on that particular object of BlockchainNode.
-    .sendTransaction(Transaction t, time_t sTime, int closeNodeCount) - recieves transaction "t" from the sensor at time "sTime" and tells that closeNodeCount-1 other nodes got it too.
-    .bChain.DisplayBlockchain() - Prints out the Blockchain on that node.
+  2. BlockchainNode Object i.e nodeList[] - <br />
+    .StartBlockchain() - Initiates the Blockchain Object on that particular object of BlockchainNode.<br />
+    .sendTransaction(Transaction t, time_t sTime, int closeNodeCount) - recieves transaction "t" from the sensor at time "sTime" and tells that closeNodeCount-1 other nodes got it too.<br />
+    .bChain.DisplayBlockchain() - Prints out the Blockchain on that node.<br />
     
 
-Now, we can test out some cases witht he above information.
-Considering all default values already provided, we can make 3 cases mainly for testing security.
+Now, we can test out some cases witht he above information.<br />
+Considering all default values already provided, we can make 3 cases mainly for testing security.<br />
 
-Case 1 : When three transactions to the nodes are sent and none of them are intercepted. The below should be the method calls from line 60 to 70 in "main.cpp".
-    //Transmitting correct transaction to node 1.
-    nodeList[0].StartBlockchain();
+Case 1 : When three transactions to the nodes are sent and none of them are intercepted. The below should be the method calls from line 60 to 70 in "main.cpp".<br />
+    		//Transmitting correct transaction to node 1.
+    		nodeList[0].StartBlockchain();
 		nodeList[0].sendTransaction(test,sTime,closeNodeCount);
 
 		// Transmitting correct transaction to node 2.
@@ -79,9 +79,9 @@ Case 1 : When three transactions to the nodes are sent and none of them are inte
 		nodeList[2].StartBlockchain();
 		nodeList[2].sendTransaction(test,sTime,closeNodeCount);
 
-Case 2 : When one of the three transactions is intercepted. Here node 2 is intercepted. The below should be the method calls from line 60 to 70 in "main.cpp".
-    //Transmitting correct transaction to node 1.
-    nodeList[0].StartBlockchain();
+Case 2 : When one of the three transactions is intercepted. Here node 2 is intercepted. The below should be the method calls from line 60 to 70 in "main.cpp".<br />
+    		//Transmitting correct transaction to node 1.
+    		nodeList[0].StartBlockchain();
 		nodeList[0].sendTransaction(test,sTime,closeNodeCount);
 
 		// Transmitting transaction to node 2. Corrupt transaction received by node 2.
@@ -92,9 +92,9 @@ Case 2 : When one of the three transactions is intercepted. Here node 2 is inter
 		nodeList[2].StartBlockchain();
 		nodeList[2].sendTransaction(test,sTime,closeNodeCount);
     
-Case 3 : When one of the three transactions is intercepted. Here node 3 is intercepted. The below should be the method calls from line 60 to 70 in "main.cpp".
-    //Transmitting correct transaction to node 1.
-    nodeList[0].StartBlockchain();
+Case 3 : When one of the three transactions is intercepted. Here node 3 is intercepted. The below should be the method calls from line 60 to 70 in "main.cpp".<br />
+    		//Transmitting correct transaction to node 1.
+    		nodeList[0].StartBlockchain();
 		nodeList[0].sendTransaction(test,sTime,closeNodeCount);
 
 		//Transmitting correct transaction to node 2.
@@ -105,16 +105,16 @@ Case 3 : When one of the three transactions is intercepted. Here node 3 is inter
 		nodeList[2].StartBlockchain();
 		nodeList[2].sendTransaction(corrupt_test,sTime,closeNodeCount);
   
-Case 2 and Case 3 are similar however they are NOT the same. 
-These cases are shown since changing the order in which nodes recieve transactions greatly determines the sequence of the majority algorithm on that particular node.
-So technically there would be a new case of even Node 1 recieved a corrupt transaction.
+Case 2 and Case 3 are similar however they are NOT the same.<br /> 
+These cases are shown since changing the order in which nodes recieve transactions greatly determines the sequence of the majority algorithm on that particular node.<br />
+So technically there would be a new case of even Node 1 recieved a corrupt transaction.<br />
 
-Observed Output:
+Observed Output:<br />
 The displayed blockchains on each of these cases must have the same blockchains with the Hash of the correct transaction after synchronozation with external nodes too;
 and the true values sent by the sensor(with default values, it would be "50.5 + 20.4"). This means that our blockchain network is Self Correcting as well as maintains Integrity.
 
 The only FAIL Case, or a case in which the Security will be compromised is when the hacker gains a 51% majority in the transactions being transmitted to the nodes separately. 
-The hacker would need to have a quantum computer or even stronger to perform these tasks as well as do the computation of mining the block by himself before the individual nodes.
+The hacker would need to have a quantum computer or even stronger to perform these tasks as well as do the computation of mining the block by himself before the individual nodes.<br />
 Hence this is not possible at the present time, so this methodology is pretty robust in this case.
 This does also make the whle IOT system require high energy and power usage as well as it makes it slower. However we believe this is a trade off for security reiant IOT systems.
 
