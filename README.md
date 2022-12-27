@@ -1,6 +1,9 @@
 This code is an implementation of a proposed integration of Blockchain Network in an IOT system with focus on Securiy. 
 
-Publication (Authorized for next volume) - International Journal of Internet and Secured Transactions (IJITST)
+Publication - International Journal of Internet and Secured Transactions (IJITST) - 2023 Vol.13 No.1
+DOI: 10.1504/IJITST.2022.10049251
+https://www.inderscienceonline.com/doi/abs/10.1504/IJITST.2023.127391
+
 
 Parcha, A., Mishra, S., Bist, A., Agarwal, R., Gupta, S., Sharma, S. and Sathyaraj, R. (2023) ‘Implementing security in IoT systems via blockchain’, Int. J. Internet Technology and Secured Transactions, Vol. 13, No. 1, pp.85–104. 
 
